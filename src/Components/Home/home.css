@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@500&display=swap");
+.home {
+  font-family: "Sora", sans-serif;
+}
+.headline{
+    padding-bottom: 40px;
+}
+.moving-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: textMove 40s linear infinite;
+  white-space: nowrap;
+}
+.moving-text img {
+  width: 40px;
+  animation: rotate 2s linear infinite;
+  margin: 0 10px;
+}
+.moving-text div {
+  font-size: 30px;
+  color: transparent;
+  text-shadow: 0 0 1px rgb(255, 255, 255), 0 0 1px black, 0 0 2px black, 0 0 2px black;
+  padding: 0 10px;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes  textMove {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+ 
+}
