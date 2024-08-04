@@ -41,13 +41,14 @@ function Banner(){
             <Carousel 
             responsive={responsive} 
             swipeable={false}
-            draggable={true}
+            draggable={false}
             infinite={true}
             autoPlay={true}
             autoPlaySpeed={3000}
             keyBoardControl={true}
             slidesToSlide={1}
             pauseOnHover={true}
+            
             >
               {
                 bannerData.map(data =>(
