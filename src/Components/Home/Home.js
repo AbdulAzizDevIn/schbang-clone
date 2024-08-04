@@ -1,7 +1,69 @@
 import EastIcon from "@mui/icons-material/East";
 import Banner from "./Banner";
+import { useState } from "react";
+import Carousel from "react-multi-carousel";
+import 'react-multi-carousel/lib/styles.css';
+
+const responsive = {
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 5
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 1
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1
+  }
+};
+const smallBannerData=[{
+  id:1,
+  url:"https://i.ibb.co/nR52Jv7/Screenshot-2024-08-04-173521.png"
+},
+{
+  id:2,
+  url:"https://i.ibb.co/nRL7q8y/Screenshot-2024-08-04-173539.png"
+},{
+  id:3,
+  url:"https://i.ibb.co/DMrYSQv/Screenshot-2024-08-04-173606.png"
+},{
+  id:4,
+  url:"https://i.ibb.co/k9zPCXp/Screenshot-2024-08-04-173622.png"
+},{
+  id:5,
+  url:"https://i.ibb.co/4dhcVSn/Screenshot-2024-08-04-173644.png"
+},{
+  id:6,
+  url:"https://i.ibb.co/Z6mDB4m/Screenshot-2024-08-04-173712.png"
+},{
+  id:7,
+  url:"https://i.ibb.co/zV4Xz35/Screenshot-2024-08-04-173736.png"
+}
+
+]
+
+const newsItems = [
+  {
+    title: 'Schbang appoints Jitto George as Executive Vice President - Media Solutions',
+    time: '3 Minutes',
+    image: 'https://cdn.prod.website-files.com/64117da520cdfb7ab62144a5/65856cccf4acae46f5371507_WhatsApp-Image-2023-12-22-at-16.29.08-p-500.webp' 
+  },
+  {
+    title: 'Britannia forays into the Metaverse with the launch of ‘Britannia Coffeeverse’',
+    time: '2.5 Minutes',
+    image: 'https://cdn.prod.website-files.com/64117da520cdfb7ab62144a5/6557247d770dca61e0c887be_Untitled%20design%20(9)-p-500.png'
+  },
+  {
+    title: 'Kotak811 shares a reminder about ROI on self-care',
+    time: '2 Minutes',
+    image: 'https://cdn.prod.website-files.com/64117da520cdfb7ab62144a5/655721aca38b966c46b74a5c_Untitled%20design%20(8)-p-500.png'
+  }
+];
 
 function Home() {
+  const [hoveredIndex, setHoveredIndex] = useState(null);
   return (
     <div className="home">
       <div className="headline">
@@ -17,7 +79,7 @@ function Home() {
           Partner
         </div>
         <p
-          style={{
+          style={{ 
             fontSize: "20px",
             paddingLeft: "5%",
             margin: "40px 0 20px 0",
@@ -222,7 +284,7 @@ function Home() {
       </div>
 
       <div className="brands">
-      <div className="brands1">
+        <div className="brands1">
           <img
             src="https://cdn.prod.website-files.com/64081b3f2fda69c80b5566e5/6470a43f9be7214cf9de3678_Xiaomi_logo_(2021-).svg-p-500.webp"
             alt=""
@@ -329,12 +391,74 @@ function Home() {
             src="https://cdn.prod.website-files.com/64081b3f2fda69c80b5566e5/6470a7508f24096486ef7faf_AL-logo-Blue-p-500.webp"
             alt=""
           />
-        </div> 
+        </div>
       </div>
 
+      
       <div className="trending">
-            
+        <div className="trd-list">
+          <div
+            style={{
+              fontSize: "30px",
+              fontWeight: "bold",
+              paddingBottom: "20px",
+            }}
+          >
+            Trending now
+          </div>
+          {newsItems.map((item, index) => (
+            <div
+              key={index}
+              className="news"
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
+              <button>Press Release</button>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  padding: "30px 0",
+                  borderBottom: "1px solid black",
+                }}
+              >
+                <p style={{ fontWeight: "bold" }}>{item.title}</p>
+                <p style={{ fontSize: "14px" }}>{item.time}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="trd-prev">
+          {hoveredIndex !== null && (
+            <img
+              src={newsItems[hoveredIndex].image}
+              alt="Trending"
+              style={{ width: '100%', height: 'auto' }} // Adjust styles as needed
+            />
+          )}
+        </div>
       </div>
+
+      <div style={{marginTop:110,cursor:"pointer",padding:"5%"}}>
+            <Carousel 
+            responsive={responsive} 
+            swipeable={false}
+            draggable={false}
+            infinite={true}
+            autoPlay={true}
+            autoPlaySpeed={3000}
+            keyBoardControl={true}
+            slidesToSlide={1}
+            pauseOnHover={true}
+            
+            >
+              {
+                smallBannerData.map(data =>(
+                  <img key={data.id} style={{width:"100%"}} src={data.url} alt="banner" />
+                ))
+              } 
+            </Carousel>
+        </div>
     </div>
   );
 }

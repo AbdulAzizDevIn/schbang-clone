@@ -213,7 +213,7 @@
 .brands{
   filter: grayscale(100%);
   padding: 100px;
-  /* Add gray border to the entire brands element */
+ 
   
 }
 .brands::before,
@@ -275,6 +275,41 @@
     transform: translateX(100%);
   }
 }
+
+
+.trending{
+  padding: 5%;
+  display: flex;
+}
+.trd-list{
+  width: 65%;
+}
+.news button {
+    width: 128px;
+    height: 25px;
+    border: solid 0.5px black;
+    border-radius: 20px;
+    background-color: transparent;
+    margin-top: 40px;
+}
+.news p{
+  font-size: 18px;
+}
+.trd-prev{
+  width: 35%;
+  padding: 20px;
+  padding-top:250px;
+  padding-left: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.trd-prev{
+ width: 350px;
+ height: 200px;
+
+}
+
 
 
 @media (max-width: 1200px) {
