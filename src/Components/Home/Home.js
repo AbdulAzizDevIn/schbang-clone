@@ -3,6 +3,7 @@ import Banner from "./Banner";
 import { useState } from "react";
 import Carousel from "react-multi-carousel";
 import 'react-multi-carousel/lib/styles.css';
+import Worldclock from "./Worldclock";
 
 const responsive = {
   desktop: {
@@ -458,6 +459,10 @@ function Home() {
                 ))
               } 
             </Carousel>
+        </div>
+              
+        <div>
+          <Worldclock/>
         </div>
     </div>
   );

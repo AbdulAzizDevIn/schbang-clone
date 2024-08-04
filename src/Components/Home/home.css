@@ -309,6 +309,12 @@
  height: 200px;
 
 }
+.time{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 30px;
+}
 
 
 

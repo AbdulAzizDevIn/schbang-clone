@@ -1,0 +1,42 @@
+.footer{
+    background-color: black;
+    width: 100%;
+    color:"white",
+}
+.footer-img{
+    border-bottom: 1px solid white ;
+}
+.footer-img img{
+    width: 100%;
+    padding-top: 30px;
+    cursor: po;
+}
+.footer div{
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+     color:"white",
+}
+.about p{
+    color: white;
+    padding-right: 17px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+}
+.aziz{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0;
+    font-weight: bold;
+}
+.aziz p{
+    margin: 0;
+}
